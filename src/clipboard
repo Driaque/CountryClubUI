@@ -1,0 +1,24 @@
+ <div className="box box-info">
+        <div className="box-header with-border">
+            <h3 className="box-title">Add to Interest </h3>
+        </div>
+        {/* /.box-header */}
+        {/* form start */}
+        <form className="form-horizontal">
+            <div className="box-body">
+            <div className="form-group">
+                <label htmlFor="inputEmail3" className="col-sm-2 control-label">Topic</label>
+                <div className="col-sm-5">
+                <input type="email" className="form-control" id="inputEmail3" placeholder="Insert a topic here..." />
+                </div>
+            </div>
+            
+            </div>
+            {/* /.box-body */}
+            <div className="box-footer">
+            <button type="submit" className="btn btn-default">Cancel</button>
+            <button type="submit" className="btn btn-info pull-right">Add</button>
+            </div>
+            {/* /.box-footer */}
+        </form>
+        </div>
