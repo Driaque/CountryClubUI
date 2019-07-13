@@ -1,18 +1,22 @@
-import React, { Component } from 'react'
-import Header from './Header';
-import Menu from './Menu';
-import Footer from './Footer';
-import Content from './Content';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { Navbar } from 'react-bootstrap';
+import './App.css';
 
 export default class App extends Component {
   render() {
     return (
-      <div>
-        <Header/>
-        <Menu/>
-        <Content/>
-        <Footer/>
+      <div className="App container">
+        <Navbar fluid collapseOnSelect>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <Link to="/">Scratch</Link>
+            </Navbar.Brand>
+            <Navbar.Toggle />
+          </Navbar.Header>
+        </Navbar>
       </div>
     )
   }
 }
+
