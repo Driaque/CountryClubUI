@@ -5,7 +5,7 @@ import {
   FormControl,
   ControlLabel
 } from "react-bootstrap";
-import LoaderButton from "../components/LoaderButton";
+import LoaderButton from "./LoaderButton";
 import "./Signup.css";
 
 export default class Signup extends Component {
@@ -84,7 +84,27 @@ export default class Signup extends Component {
 
   renderForm() {
     return (
-      <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
+        <FormGroup controlId="firstname" bsSize="large">
+          <ControlLabel>FirstName</ControlLabel>
+          <FormControl
+            autoFocus
+            type="firstname"
+            value={this.state.firstname}
+            onChange={this.handleChange}
+          />
+        </FormGroup>
+        
+        <FormGroup controlId="lastname" bsSize="large">
+          <ControlLabel>LastName</ControlLabel>
+          <FormControl
+            autoFocus
+            type="lastname"
+            value={this.state.lastname}
+            onChange={this.handleChange}
+          />
+        </FormGroup>
+
         <FormGroup controlId="email" bsSize="large">
           <ControlLabel>Email</ControlLabel>
           <FormControl
