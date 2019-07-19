@@ -4,11 +4,13 @@ import Home from "./containers/Home";
 import NotFound from "./containers/NotFound";
 import Login from "./containers/Login";
 import Signup from "./containers/Signup";
+import UserPage from "./containers/UserPage";
 
 export default () =>
   <Switch>
     <Route path="/" exact component={Home} />
     <Route path="/login" exact component={Login} />
+    <Route path="/userpage" exact component={UserPage} />
     <Route path="/signup" exact component={Signup} />
     <Route component={NotFound} />
   </Switch>;

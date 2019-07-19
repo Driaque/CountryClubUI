@@ -9,7 +9,9 @@ export default class Home extends Component {
               <h1>Country Club - Social Network</h1>
               <p>Connecting families and friends</p>
             </div>
+            
           </div>
+          
         )
     }
 }

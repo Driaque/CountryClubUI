@@ -14,18 +14,14 @@ export default class Content extends Component {
     }
 
     render() {
+
         return (
-           <div>
-  <div className="content-wrapper">
-      
-          if(this.state.FamilyRole == parent){
+            <div>
+            <div className="content-wrapper">
                 <AddInterest/>
-          }
-      
-      <AddInterest/>
-      <InterestList/>
-  </div>
-</div>
+                <InterestList/>
+            </div>
+            </div>
 
         )
     }

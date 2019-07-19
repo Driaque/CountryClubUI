@@ -54,29 +54,36 @@ export default class Login extends Component {
 
         //  Just get local storage value where you need.
           authCred  = localStorage.getItem("AuthCred");
-          var authJson = JSON.parse(JSON.parse(authCred)); //Converts Text Json to Json object
-          var userID = authJson.UserID;
-          var IsAuthenticated = authJson["IsAuthenticated"];
-          var familyID = authJson["FamilyID"];
-          var responseMessage = authJson["responseMessage"];
-          // console.log('AuthJson: ' + JSON.stringify(authJson))
-          // console.log('FamilyID: ' + familyID)
-          // console.log('UserID: ' + userID)
-          // console.log('Message: ' + responseMessage)
-          // console.log('IsAuth: ' + IsAuthenticated)
-
-          //Set IsAuth State
-          this.setState({
-            IsAuthenticated: IsAuthenticated,
-            userID : userID,
-            familyID : familyID,
-            errorMessage: responseMessage
-          });
+          var authJson, userID, IsAuthenticated, familyID, responseMessage
+          if(authCred != null)
+          {
+            authJson = JSON.parse(JSON.parse(authCred)); //Converts Text Json to Json object
+            userID = authJson.UserID;
+            IsAuthenticated = authJson["IsAuthenticated"];
+            familyID = authJson["FamilyID"];
+            responseMessage = authJson["responseMessage"];
+  
+            console.log('AuthJson: ' + JSON.stringify(authJson))
+            console.log('FamilyID: ' + familyID)
+            console.log('UserID: ' + userID)
+            console.log('IsAuth: ' + IsAuthenticated)
+            console.log('responseMessage: ' + responseMessage)
+            
+            //Set IsAuth State
+            this.setState({
+              IsAuthenticated: IsAuthenticated,
+              userID : userID,
+              familyID : familyID,
+              errorMessage: responseMessage
+            });
+          }
+         
           //If Login failed
           if (this.state.errorMessage === "Invalid Credentials"){
             alert(this.state.errorMessage);
           }
-    console.log('Done fetching')
+          console.log('Done fetching')
+          
     //Login Workflow
     //- Get username & password from form --
     //- Fetch a post call to login --
@@ -88,7 +95,7 @@ export default class Login extends Component {
 
   render() {
     if (this.state.IsAuthenticated === true) {
-      return <Redirect to='/' />
+      return <Redirect to='/userpage' />
     }
     
     return (
